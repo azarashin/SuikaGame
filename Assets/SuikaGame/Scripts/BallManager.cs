@@ -17,12 +17,12 @@ namespace SuikaGame
 
         public void CombineBalls(Ball ballA, Ball ballB, int id)
         {
-            int nextId = id + 1;
-            Vector3 pos = (ballA.transform.position + ballB.transform.position) * 0.5f;
             Destroy(ballA.gameObject);
             Destroy(ballB.gameObject);
+            int nextId = id + 1;
             if (nextId < _ballPrefabs.Length)
             {
+                Vector3 pos = (ballA.transform.position + ballB.transform.position) * 0.5f;
                 Instantiate(_ballPrefabs[nextId], pos, Quaternion.identity);
             }
         }
