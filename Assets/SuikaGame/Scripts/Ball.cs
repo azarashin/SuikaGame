@@ -11,6 +11,7 @@ namespace SuikaGame
         int _id = 0;
 
         bool _isHit;
+        GameManager _gameManager; 
         BallManager _ballManager;
         BallController _ballController;
         Rigidbody2D _rigidbody; 
@@ -19,6 +20,7 @@ namespace SuikaGame
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.gravityScale = 0.0f;
+            _gameManager = FindObjectsByType<GameManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _ballManager = FindObjectsByType<BallManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _ballController = FindObjectsByType<BallController>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _isHit = false; 
@@ -47,7 +49,7 @@ namespace SuikaGame
         {
             if (collision.gameObject.CompareTag("DeadArea") && _ballController != null && !_ballController.IsControlled(this))
             {
-                _ballManager.GameOver();
+                _gameManager.GameOver();
             }
         }
 

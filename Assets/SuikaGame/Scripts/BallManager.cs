@@ -33,10 +33,5 @@ namespace SuikaGame
             return _ballPrefabs[index]; 
         }
 
-        internal void GameOver()
-        {
-            _gameOverPanel.SetActive(true); 
-            _ballController.gameObject.SetActive(false); 
-        }
     }
 }
