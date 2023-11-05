@@ -775,9 +775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c4a698b46cee149919073a9503b2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballManager: {fileID: 0}
-  _sideSpeed: 0.8
-  _downSpeed: 1.2
+  _ballManager: {fileID: 1002170787}
+  _sideSpeed: 2
+  _downSpeed: 4
   _fallSpeed: 0.5
 --- !u!4 &696464625
 Transform:
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballController: {fileID: 696464624}
-  _gameOverPanel: {fileID: 1002170786}
+  _gameOverPanel: {fileID: 568049474}
 --- !u!4 &803681010
 Transform:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,6 @@ MonoBehaviour:
   - {fileID: 531390624816111759, guid: 1606fad67816b6945b1730674c0174c5, type: 3}
   - {fileID: 8323526116553930120, guid: 624486b4281c27e4092a3607f4e08239, type: 3}
   _ballController: {fileID: 696464624}
-  _gameOverPanel: {fileID: 568049474}
 --- !u!4 &1002170788
 Transform:
   m_ObjectHideFlags: 0
