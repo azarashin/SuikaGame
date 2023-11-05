@@ -21,12 +21,22 @@ namespace SuikaGame
         void OnCollisionEnter2D(Collision2D collision)
         {
             Ball ball = collision.gameObject.GetComponent<Ball>();
-            if(ball != null && !ball._isHit && _id == ball._id)
+            // 衝突相手が他のボールか床だったらこのボールを操作できないようにする
+            if (ball != null || collision.gameObject.CompareTag("Floor"))
+            {
+                _ballController.TryReleaseBall(this);
+            }
+
+            if (ball != null)
+            {
+                if (!ball._isHit && _id == ball._id)
             {
                 _isHit=true;
                 _manager.CombineBalls(this, ball, _id); 
             }
         }
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("DeadArea") && _ballController != null && !_ballController.IsControlled(this))
