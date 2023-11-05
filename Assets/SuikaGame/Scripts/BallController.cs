@@ -34,18 +34,16 @@ namespace SuikaGame
             if (Input.GetKey(KeyCode.A))
             {
                 _controlledBall.transform.position -= Vector3.right * _sideSpeed * Time.deltaTime;
-                Debug.Log("A");
             }
             if (Input.GetKey(KeyCode.D))
             {
                 _controlledBall.transform.position += Vector3.right * _sideSpeed * Time.deltaTime;
-                Debug.Log("D");
             }
             if (Input.GetKey(KeyCode.S))
             {
                 _controlledBall.transform.position += Vector3.down * _downSpeed * Time.deltaTime;
-                Debug.Log("S");
             }
+            // 等速落下
             _controlledBall.transform.position += Vector3.down * _fallSpeed * Time.deltaTime;
         }
 
