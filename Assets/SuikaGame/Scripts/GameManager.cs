@@ -18,8 +18,12 @@ namespace SuikaGame
         // Update is called once per frame
         void Update()
         {
+        [SerializeField]
+        BallController _ballController;
 
         }
+        [SerializeField]
+        GameObject _gameOverPanel; 
 
         public void CombineBalls(Ball ballA, Ball ballB, int id)
         {
@@ -31,6 +35,11 @@ namespace SuikaGame
             {
                 Instantiate(_ballPrefabs[nextId], pos, Quaternion.identity);
             }
+        }
+        internal void GameOver()
+        {
+            _gameOverPanel.SetActive(true); 
+            _ballController.gameObject.SetActive(false); 
         }
     }
 }

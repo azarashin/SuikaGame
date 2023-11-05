@@ -27,6 +27,13 @@ namespace SuikaGame
                 _manager.CombineBalls(this, ball, _id); 
             }
         }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("DeadArea") && _ballController != null && !_ballController.IsControlled(this))
+            {
+                _manager.GameOver();
+            }
+        }
 
         public void Release()
         {
