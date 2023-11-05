@@ -28,5 +28,10 @@ namespace SuikaGame
             }
         }
 
+        public void Release()
+        {
+            transform.parent = null;
+            _rigidbody.gravityScale = 1.0f;
+        }
     }
 }
