@@ -9,19 +9,9 @@ namespace SuikaGame
         [SerializeField]
         Ball[] _ballPrefabs;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
         [SerializeField]
         BallController _ballController;
 
-        }
         [SerializeField]
         GameObject _gameOverPanel; 
 
