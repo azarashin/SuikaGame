@@ -26,6 +26,13 @@ namespace SuikaGame
                 Instantiate(_ballPrefabs[nextId], pos, Quaternion.identity);
             }
         }
+
+        public Ball ReferRandomBallPrefab()
+        {
+            int index = Random.Range(0, _ballPrefabs.Length);
+            return _ballPrefabs[index]; 
+        }
+
         internal void GameOver()
         {
             _gameOverPanel.SetActive(true); 
