@@ -12,9 +12,6 @@ namespace SuikaGame
         [SerializeField]
         BallController _ballController;
 
-        [SerializeField]
-        GameObject _gameOverPanel; 
-
         public void CombineBalls(Ball ballA, Ball ballB, int id)
         {
             Destroy(ballA.gameObject);
