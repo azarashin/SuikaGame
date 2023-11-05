@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SuikaGame
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Ball : MonoBehaviour
     {
         [SerializeField]
@@ -12,9 +13,12 @@ namespace SuikaGame
         bool _isHit;
         GameManager _manager;
         BallController _ballController;
+        Rigidbody2D _rigidbody; 
 
         private void Start()
         {
+            _rigidbody = GetComponent<Rigidbody2D>();
+            _rigidbody.gravityScale = 0.0f;
             _manager = FindObjectsByType<GameManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _ballController = FindObjectsByType<BallController>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _isHit = false; 
