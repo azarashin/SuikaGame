@@ -11,10 +11,12 @@ namespace SuikaGame
 
         bool _isHit;
         GameManager _manager;
+        BallController _ballController;
 
         private void Start()
         {
-            _manager = FindObjectsByType<GameManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0]; 
+            _manager = FindObjectsByType<GameManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
+            _ballController = FindObjectsByType<BallController>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _isHit = false; 
         }
 
@@ -30,11 +32,11 @@ namespace SuikaGame
             if (ball != null)
             {
                 if (!ball._isHit && _id == ball._id)
-            {
-                _isHit=true;
-                _manager.CombineBalls(this, ball, _id); 
+                {
+                    _isHit = true;
+                    _manager.CombineBalls(this, ball, _id);
+                }
             }
-        }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
