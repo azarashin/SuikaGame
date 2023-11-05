@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SuikaGame
 {
-    public class GameManager : MonoBehaviour
+    public class BallManager : MonoBehaviour
     {
         [SerializeField]
         Ball[] _ballPrefabs;

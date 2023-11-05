@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 1002170788}
   - component: {fileID: 1002170787}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: BallCobiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

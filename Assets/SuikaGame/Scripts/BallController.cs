@@ -7,7 +7,7 @@ namespace SuikaGame
     public class BallController : MonoBehaviour
     {
         [SerializeField]
-        GameManager _gameManager;
+        BallManager _ballManager;
 
         [SerializeField]
         float _sideSpeed = 0.8f;
@@ -23,7 +23,7 @@ namespace SuikaGame
         // Start is called before the first frame update
         void Start()
         {
-            Ball firstBallPrefab = _gameManager.ReferRandomBallPrefab();
+            Ball firstBallPrefab = _ballManager.ReferRandomBallPrefab();
             _controlledBall = Instantiate(firstBallPrefab, transform.position, Quaternion.identity, transform);
 
         }
@@ -54,7 +54,7 @@ namespace SuikaGame
             if (IsControlled(releaseBall))
             {
                 releaseBall.Release();
-                Ball ballPrefab = _gameManager.ReferRandomBallPrefab();
+                Ball ballPrefab = _ballManager.ReferRandomBallPrefab();
                 _controlledBall = Instantiate(ballPrefab, transform.position, Quaternion.identity, transform);
             }
         }
