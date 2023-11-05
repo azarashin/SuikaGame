@@ -14,12 +14,9 @@ namespace SuikaGame
         GameManager _gameManager; 
         BallManager _ballManager;
         BallController _ballController;
-        Rigidbody2D _rigidbody; 
 
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _rigidbody.gravityScale = 0.0f;
             _gameManager = FindObjectsByType<GameManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _ballManager = FindObjectsByType<BallManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
             _ballController = FindObjectsByType<BallController>(FindObjectsInactive.Include, FindObjectsSortMode.None)[0];
@@ -55,8 +52,9 @@ namespace SuikaGame
 
         public void Release()
         {
+            Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
             transform.parent = null;
-            _rigidbody.gravityScale = 1.0f;
+            rigidbody.gravityScale = 1.0f;
         }
     }
 }

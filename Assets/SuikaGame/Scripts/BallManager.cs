@@ -20,7 +20,8 @@ namespace SuikaGame
             if (nextId < _ballPrefabs.Length)
             {
                 Vector3 pos = (ballA.transform.position + ballB.transform.position) * 0.5f;
-                Instantiate(_ballPrefabs[nextId], pos, Quaternion.identity);
+                Ball ball = Instantiate(_ballPrefabs[nextId], pos, Quaternion.identity);
+                ball.Release(); // 自由落下させる
             }
         }
 
